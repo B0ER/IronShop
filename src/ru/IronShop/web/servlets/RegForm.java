@@ -21,7 +21,7 @@ public class RegForm extends HttpServlet {
 
 
 
-        request.getRequestDispatcher("WEB-INF/RegForm.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/jsps/RegForm.jsp").forward(request, response);
 
 
     }

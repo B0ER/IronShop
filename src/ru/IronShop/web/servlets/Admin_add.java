@@ -9,16 +9,14 @@ import java.io.IOException;
 public class Admin_add extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("WEB-INF/MainIronShop.jsp").forward(req,resp);
+
+
+
+
+        req.getRequestDispatcher("WEB-INF/jsps/MainIronShop.jsp").forward(req,resp);
+
     }
 
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-
-
-        req.getRequestDispatcher("WEB-INF/MainIronShop.jsp").forward(req,resp);
-    }
 }

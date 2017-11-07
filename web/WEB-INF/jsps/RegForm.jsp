@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
 
-    <link rel="stylesheet" href="../RegStyle/css/style.css">
+    <link rel="stylesheet" href="../../../RegStyle/css/style.css">
 
 
 </head>
@@ -97,7 +97,7 @@
 </div> <!-- /form -->
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-<script  src="../RegStyle/js/index.js"></script>
+<script  src="../../../RegStyle/js/index.js"></script>
 
 </body>
 </html>

@@ -12,7 +12,7 @@ public class IronShopMain extends  HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
-        request.getRequestDispatcher("WEB-INF/MainIronShop.jsp").forward(request,response);
+        request.getRequestDispatcher("WEB-INF/jsps/MainIronShop.jsp").forward(request,response);
 
 
     }

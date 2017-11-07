@@ -50,6 +50,19 @@ public class MySqlEdit {
             st.executeUpdate("INSERT INTO users(name,fam,mail,password) VALUES('"+a.name+"','"+a.fam+"','"+a.mail+"','"+a.password+"');");
             }catch (SQLException e){;}
         }
+
+
+    public int counter(String quare) {
+        int count=0;
+        try {
+            rs = st.executeQuery(quare);
+            rs.last();
+            count = rs.getRow();
+        }catch (SQLException e){System.out.println(""+e);}
+        return count;
+    }
+
+
     }
 
 

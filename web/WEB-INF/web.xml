@@ -13,7 +13,7 @@
         <servlet-class>ru.IronShop.web.servlets.SimpleServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>TestServ</servlet-name>
+        <servlet-name>Admin</servlet-name>
         <servlet-class>ru.IronShop.web.servlets.Admin_add</servlet-class>
 
     </servlet>
@@ -38,10 +38,36 @@
         <servlet-class>ru.IronShop.web.servlets.AcceptRegister</servlet-class>
     </servlet>
 
-//подключение ссылок
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <servlet-mapping>
-        <servlet-name>TestServ</servlet-name>
-        <url-pattern>/testServ</url-pattern>
+        <servlet-name>Admin</servlet-name>
+        <url-pattern>/Admin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Simple</servlet-name>
@@ -68,7 +94,32 @@
         <url-pattern>/Accept</url-pattern>
     </servlet-mapping>
 
-    ///Поддержка данных
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>*.css</url-pattern>
