@@ -31,7 +31,7 @@ public class MySqlEdit {
         }
         catch(SQLException e){;}
     }
-    public  List<Users> getAllUsers(){
+    public  List<Users> getAllUsers(String quare){
 
         List<Users> list = new ArrayList<Users>();
         try {

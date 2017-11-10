@@ -17,12 +17,16 @@ public class RegForm extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
 
-        HttpSession s = request.getSession(true);
-
-
-
         request.getRequestDispatcher("WEB-INF/jsps/RegForm.jsp").forward(request, response);
 
 
+    }
+
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+
+        req.getRequestDispatcher("WEB-INF/jsps/RegForm.jsp").forward(req, resp);
     }
 }

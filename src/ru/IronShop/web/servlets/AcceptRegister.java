@@ -15,17 +15,16 @@ public class AcceptRegister extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        try {
             MySqlEdit ms = new MySqlEdit();
             HttpSession session = req.getSession();
             Users temp = (Users) session.getAttribute("acceptUser");
             ms.register(temp);
 
             session.removeAttribute("acceptUser");
-        }catch (NullPointerException e){
-            req.getRequestDispatcher("/vk.com").forward(req,resp);
-        }
 
+            req.setAttribute("mail",temp.mail);
+            req.setAttribute("thanks","true");
+        req.getRequestDispatcher("WEB-INF/jsps/AcceptMailPage.jsp").forward(req,resp);
 
 
 

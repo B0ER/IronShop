@@ -21,26 +21,13 @@ public class SimpleServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
             MySqlEdit ms = new MySqlEdit();
-        HttpSession sesion = request.getSession(true);
-
 
         List<String> l = new ArrayList<String>();
 
+        String text= "cheto est";
 
 
-       // l.add("MyStr: "+ ms.getAllUsers().size());
-
-
-        for(Users s: ms.getAllUsers()){
-         l.add(s.toString());
-        }
-
-
-       sesion.setAttribute("getAll",l);
-
-       // l.add("Xer");
-
-        //
+        //request.setAttribute("at",text);
 
 
 

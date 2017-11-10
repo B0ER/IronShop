@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
@@ -27,7 +28,7 @@
         <div id="signup">
             <h1>Зарегистрируйтесь</h1>
 
-            <form action="Sign" method="get">
+            <form action="ErrorSign" method="POST">
 
                 <div class="top-row">
                     <div class="field-wrap">
@@ -45,10 +46,16 @@
                     </div>
                 </div>
 
+                <c:if test="${requestScope.alreadyMail != null}">
+                <p> <div class = "error-email" style="color: Red; "><b>Данный имейл уже зарегистрирован</b></div> <p>
+                </c:if>
+
+
                 <div class="field-wrap">
                     <label>
                         Email Address<span class="req">*</span>
                     </label>
+
                     <input type="email" name="mail" value ="impossible1770@gmail.com" required autocomplete="off"/>
                 </div>
 
@@ -68,25 +75,30 @@
         <div id="login">
             <h1>Авторизуйтесь!</h1>
 
-            <form action="/" method="post">
+
+            <form action="ErrorSign" method="POST">
+                <c:if test="${requestScope.alreadyMailandPassword != null}">
+                <p> <div class = "error-email" style="color: Red; "><b>Логин или пароль не верны!</b></div> <p>
+                </c:if>
+
 
                 <div class="field-wrap">
                     <label>
                         Email Address<span class="req">*</span>
                     </label>
-                    <input type="email"required autocomplete="off"/>
+                    <input type="email" name="mail" value="impossible1770@gmail.com" required autocomplete="off"/>
                 </div>
 
                 <div class="field-wrap">
                     <label>
                         Password<span class="req">*</span>
                     </label>
-                    <input type="password"required autocomplete="off"/>
+                    <input type="password" value="qweewq" name="password"required autocomplete="off"/>
                 </div>
 
                 <p class="forgot"><a href="https://xplayon.com/images/softimages0/17-10/Eto-Fiasko-bratan/Eto-Fiasko-bratan-1.jpg">Забыли пароль?</a></p>
 
-                <button class="button button-block"/>Вход</button>
+                <button name="send" value="false" class="button button-block"/>Вход</button>
 
             </form>
 

@@ -23,15 +23,11 @@
 </head>
 <body>
 
-${sessionScope.acceptUser}
-<c:forEach var="n" items="${sessionScope.getAll}">
-    ${n}<br>
-</c:forEach>
+<c:if test="${requestScope.at != null}">
+<p>${sessionScope.at} <p>
+    </c:if>
 
 <hr>
-<a href="simple?id=3">Это ссылка типо<br>
-    <img src="../../big1.jpg">
-</a>
 
 
 My page

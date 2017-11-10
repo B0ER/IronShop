@@ -37,6 +37,10 @@
         <servlet-name>Accept</servlet-name>
         <servlet-class>ru.IronShop.web.servlets.AcceptRegister</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ErrorSign</servlet-name>
+        <servlet-class>ru.IronShop.web.servlets.ErrorRegister</servlet-class>
+    </servlet>
 
 
 
@@ -94,6 +98,10 @@
         <url-pattern>/Accept</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>ErrorSign</servlet-name>
+        <url-pattern>/ErrorSign</url-pattern>
+    </servlet-mapping>
 
 
 
