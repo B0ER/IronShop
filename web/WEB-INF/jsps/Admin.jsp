@@ -10,7 +10,7 @@
 <head >
     <title>Подтверждение email</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../../AdminStyle/style.css">
+    <link rel="stylesheet" href="../../../AdminStyle/css/style.css">
 </head>
 
 

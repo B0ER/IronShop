@@ -13,7 +13,7 @@ public class Admin_add extends HttpServlet {
 
 
 
-        req.getRequestDispatcher("WEB-INF/jsps/MainIronShop.jsp").forward(req,resp);
+        req.getRequestDispatcher("WEB-INF/jsps/Admin.jsp").forward(req,resp);
 
     }
 

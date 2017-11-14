@@ -25,7 +25,7 @@
     </c:if>
 
         <c:if test="${requestScope.thanks != null}">
-<p> <h1 class="text__bottom"> ${requestScope.rfam} ${requestScope.rname} ваш аккаунт был подтвержден <br>Ваш email: ${requestScope.mail} был подтвержден  !</h1> <p>
+<p> <h1 class="text__bottom"> ${sessionScope.rfam} ${requestScope.rname} ваш аккаунт был подтвержден <br>Ваш email: ${requestScope.mail} был подтвержден  !</h1> <p>
     </c:if>
 
 

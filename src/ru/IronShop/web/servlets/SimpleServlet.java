@@ -22,12 +22,12 @@ public class SimpleServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
             MySqlEdit ms = new MySqlEdit();
 
-        List<String> l = new ArrayList<String>();
 
-        String text= "cheto est";
+        Users u = new Users("q","w","e","r","y");
 
-
-        //request.setAttribute("at",text);
+        List <Users> l = new ArrayList<Users>();
+        l.add(u);
+        request.setAttribute("at",l);
 
 
 

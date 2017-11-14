@@ -1,10 +1,11 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Free CSS template by ChocoTemplates.com</title>
+    <title>Магазин IronShop</title>
     <link rel="stylesheet" href="../../../StyleMainIronShop/css/style.css" type="text/css" media="all" />
     <!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
 
@@ -42,8 +43,8 @@
             <ul>
                 <li><a href="MySite" class="active">Главная страница</a></li>
                 <li><a href="RegForm">Авторизация/Регистрация</a></li>
-                <li><a href="https://vk.com/sanek_ru">Первый разработчик</a></li>
-                <li><a href="https://vk.com/id_679523328">Второй разработчик</a></li>
+                <li><a href="https://vk.com/sanek_ru">Dev</a></li>
+                <li><a href="https://vk.com/id_679523328">Dev</a></li>
             </ul>
         </div>
         <!-- End Navigation -->
@@ -80,84 +81,21 @@
             <div class="products">
                 <div class="cl">&nbsp;</div>
                 <ul>
-                    <li>
-                        <a href="#"><img src="../../../StyleMainIronShop/css/images/big1.jpg" alt="" /></a>
-                        <div class="product-info">
-                            <h3>LOREM IPSUM1</h3>
-                            <div class="product-desc">
-                                <h4>WOMEN’S</h4>
-                                <p>Lorem ipsum dolor sit<br />amet</p>
-                                <strong class="price">$58.99</strong>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#"><img src="../../../StyleMainIronShop/css/images/big1.jpg" alt="" /></a>
-                        <div class="product-info">
-                            <h3>LOREM IPSUM</h3>
-                            <div class="product-desc">
-                                <h4>WOMEN’S</h4>
-                                <p>Lorem ipsum dolor sit<br />amet</p>
-                                <strong class="price">$58.99</strong>
-                            </div>
-                        </div>
-                    </li>
-                    <li class = "last">
-                        <a href="#"><img src="../../../StyleMainIronShop/css/images/big1.jpg" alt="" /></a>
-                        <div class="product-info">
-                            <h3>LOREM IPSUM</h3>
-                            <div class="product-desc">
-                                <h4>WOMEN’S</h4>
-                                <p>Lorem ipsum dolor sit<br />amet</p>
-                                <strong class="price">$58.99</strong>
-                            </div>
-                        </div>
-                    </li>
-                    <li >
-                        <a href="#"><img src="../../../StyleMainIronShop/css/images/big1.jpg" alt="" /></a>
-                        <div class="product-info">
-                            <h3>LOREM IPSUM</h3>
-                            <div class="product-desc">
-                                <h4>WOMEN’S</h4>
-                                <p>Lorem ipsum dolor sit<br />amet</p>
-                                <strong class="price">$58.99</strong>
-                            </div>
-                        </div>
-                    </li>
-                    <li >
-                    <a href="#"><img src="../../../StyleMainIronShop/css/images/big1.jpg" alt="" /></a>
-                    <div class="product-info">
-                        <h3>LOREM IPSUM</h3>
+        <c:forEach var ="p" items="${requestScope.product}">
+                        ${p.class_name}
+                            <a href="#"><img src="${p.image}" alt="" /></a>
+                            <div class="product-info">
+                                <h3>${p.model}</h3>
                         <div class="product-desc">
-                            <h4>WOMEN’S</h4>
-                            <p>Lorem ipsum dolor sit<br />amet</p>
-                            <strong class="price">$58.99</strong>
-                        </div>
-                    </div>
-                </li>
-                    <li class="last">
-                        <a href="#"><img src="../../../StyleMainIronShop/css/images/big1.jpg" alt="" /></a>
-                        <div class="product-info">
-                            <h3>LOREM IPSUM</h3>
-                            <div class="product-desc">
-                                <h4>WOMEN’S</h4>
-                                <p>Lorem ipsum dolor sit<br />amet</p>
-                                <strong class="price">$58.99</strong>
-                            </div>
+                            <h4>Пол: ${p.sex}</h4>
+                        <p>${p.desk}</p>
+                        <strong class="price">${p.price} руб.</strong>
+                                 </div>
                         </div>
                     </li>
-                    <li >
-                        <a href="#"><img src="../../../StyleMainIronShop/css/images/big1.jpg" alt="" /></a>
-                        <div class="product-info">
-                            <h3>LOREM IPSUM</h3>
-                            <div class="product-desc">
-                                <h4>WOMEN’S</h4>
-                                <p>Lorem ipsum dolor sit<br />amet</p>
-                                <strong class="price">$58.99</strong>
-                            </div>
-                        </div>
-                    </li>
+        </c:forEach>
                 </ul>
+
                 <div class="cl">&nbsp;</div>
             </div>
             <!-- End Products -->

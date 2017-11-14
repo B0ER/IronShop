@@ -1,5 +1,6 @@
 package ru.IronShop.web.MySql;
 
+import ru.IronShop.web.ObjectSite.DataOfProduct.Product;
 import ru.IronShop.web.ObjectSite.Users;
 
 import java.sql.*;
@@ -44,6 +45,27 @@ public class MySqlEdit {
             }catch (Exception e){list.add(new Users(""+e,"Eror","Error","Eror","Eror"));}
         return list;
         }
+
+        public List<Product> getProduct(String quare){
+            List<Product> list = new ArrayList<Product>();
+            try {
+                int counter=0;
+                rs = st.executeQuery("SELECT * from product");
+                while (rs.next()) {
+                    counter++;
+                        Product p = new Product(rs.getInt(1),((counter%3) == 0)?"<li class = \"last\">":"<li>",rs.getString(2),rs.getString(3)
+                        ,rs.getString(5),rs.getString(6),rs.getString(7),
+                                rs.getInt(8));
+                        list.add(p);
+
+                }
+            }catch (Exception e){;}
+            return list;
+
+
+        }
+
+
 
     public void register(Users a){
         try {

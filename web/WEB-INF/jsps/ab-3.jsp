@@ -23,9 +23,30 @@
 </head>
 <body>
 
-<c:if test="${requestScope.at != null}">
-<p>${sessionScope.at} <p>
-    </c:if>
+<c:forEach var ="n" items="${requestScope.at}">
+
+    ${n.toString}
+    <br>
+    ${n.id}
+    <br>
+
+    <br>
+    ${n.name}
+    <br>
+
+    <br>
+    ${n.fam}
+    <br>
+
+    <br>
+    ${n.mail}
+    <br>
+
+    <br>
+    ${n.password}
+    <br>
+</c:forEach>
+
 
 <hr>
 
