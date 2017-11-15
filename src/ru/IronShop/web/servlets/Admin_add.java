@@ -11,12 +11,13 @@ public class Admin_add extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
-
-
-        req.getRequestDispatcher("WEB-INF/jsps/Admin.jsp").forward(req,resp);
+        req.getRequestDispatcher("MySite").forward(req,resp);
 
     }
 
-
-
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if(req.getAttribute("key").equals("f952dgsc8Cji31916WdkTNrodZAEngwkCdl7TWdK6wjI6R5O0Mpu6wAjAowG99FR"));
+        req.getRequestDispatcher("WEB-INF/jsps/Admin.jsp").forward(req,resp);
+    }
 }

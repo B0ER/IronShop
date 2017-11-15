@@ -86,14 +86,14 @@
                     <label>
                         Email Address<span class="req">*</span>
                     </label>
-                    <input type="email" name="mail" value="impossible1770@gmail.com" required autocomplete="off"/>
+                    <input type="email" name="mail"  required autocomplete="off"/>
                 </div>
 
                 <div class="field-wrap">
                     <label>
                         Password<span class="req">*</span>
                     </label>
-                    <input type="password" value="qweewq" name="password"required autocomplete="off"/>
+                    <input type="password"  name="password"required autocomplete="off"/>
                 </div>
 
                 <p class="forgot"><a href="https://xplayon.com/images/softimages0/17-10/Eto-Fiasko-bratan/Eto-Fiasko-bratan-1.jpg">Забыли пароль?</a></p>

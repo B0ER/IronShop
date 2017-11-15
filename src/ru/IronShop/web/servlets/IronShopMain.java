@@ -20,7 +20,7 @@ public class IronShopMain extends  HttpServlet{
         request.setCharacterEncoding("UTF-8");
         List<Product> p = new ArrayList<Product>();
 
-        request.setAttribute("product",ms.getProduct("sdfdsf"));
+        request.setAttribute("product",ms.getProduct("SELECT * FROM product;"));
         request.getRequestDispatcher("WEB-INF/jsps/MainIronShop.jsp").forward(request,response);
 
 
@@ -28,7 +28,12 @@ public class IronShopMain extends  HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        MySqlEdit ms = new MySqlEdit();
+
         req.setCharacterEncoding("UTF-8");
-        req.getRequestDispatcher("WEB-INF/jsps/MainIronShop.jsp").forward(req,resp);
+        List<Product> p = new ArrayList<Product>();
+        req.setAttribute("product",ms.getProduct("SELECT * FROM product"));
+        req.getRequestDispatcher("WEB-INF/jsps/MainIronShop.jsp").forward(req,resp);;
     }
 }

@@ -44,11 +44,21 @@ public class RegisterServlets extends HttpServlet {
         }
         if(req.getParameter("send").equals("false")){
                     //Авторизация
-                List<Users> temp = ms.getAllUsers("SELECT * FROM users WHERE mail='"+req.getParameter("mail")+"' AND password = '"+req.getParameter("password")+"';");
+                List<Users> temp = ms.getAllUsers("SELECT * FROM users WHERE users.mail='"+req.getParameter("mail")+"' AND users.password = '"+req.getParameter("password")+"';");
                 session.setAttribute("session_user_name",temp.get(0).name);
                 session.setAttribute("session_user_fam",temp.get(0).fam);
                 session.setAttribute("session_user_mail",temp.get(0).mail);
-                req.getRequestDispatcher("MySite").forward(req,resp);
+            System.out.println("1"+temp.get(0).id);
+                if(ms.counter("SELECT * FROM admin WHERE admin.user_id = '"+temp.get(0).id+"';")>0)
+                {
+                    System.out.println("2");
+                    System.out.println(temp.get(0).id);
+                    req.setAttribute("key","f952dgsc8Cji31916WdkTNrodZAEngwkCdl7TWdK6wjI6R5O0Mpu6wAjAowG99FR");
+                    req.getRequestDispatcher("Admin").forward(req,resp);
+                }
+                    else {
+                    req.getRequestDispatcher("MySite").forward(req, resp);
+                }
         }
     }
 }

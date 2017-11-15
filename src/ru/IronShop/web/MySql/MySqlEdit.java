@@ -18,9 +18,6 @@ public class MySqlEdit {
     private  Statement st;
     private  ResultSet rs;
 
-    private  String quare;
-
-
 
     public MySqlEdit(){
         try {
@@ -37,7 +34,7 @@ public class MySqlEdit {
         List<Users> list = new ArrayList<Users>();
         try {
 
-            rs = st.executeQuery("SELECT * from users");
+            rs = st.executeQuery(quare);
             while (rs.next()) {
                 Users u = new Users(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
                 list.add(u);
@@ -50,7 +47,7 @@ public class MySqlEdit {
             List<Product> list = new ArrayList<Product>();
             try {
                 int counter=0;
-                rs = st.executeQuery("SELECT * from product");
+                rs = st.executeQuery(quare);
                 while (rs.next()) {
                     counter++;
                         Product p = new Product(rs.getInt(1),((counter%3) == 0)?"<li class = \"last\">":"<li>",rs.getString(2),rs.getString(3)

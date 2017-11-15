@@ -86,12 +86,12 @@
                             <a href="#"><img src="${p.image}" alt="" /></a>
                             <div class="product-info">
                                 <h3>${p.model}</h3>
-                        <div class="product-desc">
-                            <h4>Пол: ${p.sex}</h4>
-                        <p>${p.desk}</p>
-                        <strong class="price">${p.price} руб.</strong>
-                                 </div>
-                        </div>
+                                    <div class="product-desc">
+                                             <h4>Пол: ${p.sex}</h4>
+                                             <p>Описание:<br>${p.desk}</p>
+                                             <strong class="price">${p.price} руб.</strong>
+                                    </div>
+                            </div>
                     </li>
         </c:forEach>
                 </ul>
