@@ -1,10 +1,12 @@
 package ru.IronShop.web.MySql;
 
+import ru.IronShop.web.ObjectSite.DataOfProduct.Category;
 import ru.IronShop.web.ObjectSite.DataOfProduct.Product;
 import ru.IronShop.web.ObjectSite.Users;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MySqlEdit {
@@ -14,22 +16,24 @@ public class MySqlEdit {
     private static final String password = "4665EAaYk5Wp3BDX";
 
 
-    private  Connection cn;
-    private  Statement st;
-    private  ResultSet rs;
+    private  static Connection cn;
+    private  static Statement st;
+    private  static ResultSet rs;
 
-
-    public MySqlEdit(){
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            cn = DriverManager.getConnection(url, user, password);
-            st = cn.createStatement();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        catch(SQLException e){;}
+static{
+    try {
+        Class.forName("com.mysql.jdbc.Driver");
+        cn = DriverManager.getConnection(url, user, password);
+        st = cn.createStatement();
+    } catch (ClassNotFoundException e) {
+        e.printStackTrace();
     }
-    public  List<Users> getAllUsers(String quare){
+    catch(SQLException e){;}
+}
+
+   // public MySqlEdit(){}
+
+    public static List<Users> getAllUsers(String quare){
 
         List<Users> list = new ArrayList<Users>();
         try {
@@ -43,7 +47,7 @@ public class MySqlEdit {
         return list;
         }
 
-        public List<Product> getProduct(String quare){
+        public static  List<Product> getProduct(String quare){
             List<Product> list = new ArrayList<Product>();
             try {
                 int counter=0;
@@ -64,14 +68,14 @@ public class MySqlEdit {
 
 
 
-    public void register(Users a){
+    public static void register(Users a){
         try {
             st.executeUpdate("INSERT INTO users(name,fam,mail,password) VALUES('"+a.name+"','"+a.fam+"','"+a.mail+"','"+a.password+"');");
             }catch (SQLException e){;}
         }
 
 
-    public int counter(String quare) {
+    public static int counter(String quare) {
         int count=0;
         try {
             rs = st.executeQuery(quare);
@@ -81,6 +85,20 @@ public class MySqlEdit {
         return count;
     }
 
+
+    public static ArrayList<Category> updateCategory() {
+        ArrayList<Category> list = new ArrayList<>();
+        try {
+            rs = st.executeQuery("SELECT * FROM category;");
+            while (rs.next()) {
+                list.add(new Category(rs.getInt(1), rs.getString(2)));
+            }
+            rs.close();
+        } catch (SQLException e) {
+            ;
+        }
+        return list;
+    }
 
     }
 

@@ -21,7 +21,7 @@ public class RegisterServlets extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        MySqlEdit ms = new MySqlEdit();
+
         Mail mail = new Mail();
         req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
@@ -44,12 +44,12 @@ public class RegisterServlets extends HttpServlet {
         }
         if(req.getParameter("send").equals("false")){
                     //Авторизация
-                List<Users> temp = ms.getAllUsers("SELECT * FROM users WHERE users.mail='"+req.getParameter("mail")+"' AND users.password = '"+req.getParameter("password")+"';");
+                List<Users> temp = MySqlEdit.getAllUsers("SELECT * FROM users WHERE users.mail='"+req.getParameter("mail")+"' AND users.password = '"+req.getParameter("password")+"';");
                 session.setAttribute("session_user_name",temp.get(0).name);
                 session.setAttribute("session_user_fam",temp.get(0).fam);
                 session.setAttribute("session_user_mail",temp.get(0).mail);
             System.out.println("1"+temp.get(0).id);
-                if(ms.counter("SELECT * FROM admin WHERE admin.user_id = '"+temp.get(0).id+"';")>0)
+                if(MySqlEdit.counter("SELECT * FROM admin WHERE admin.user_id = '"+temp.get(0).id+"';")>0)
                 {
                     System.out.println("2");
                     System.out.println(temp.get(0).id);

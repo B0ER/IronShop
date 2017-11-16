@@ -15,10 +15,10 @@ public class AcceptRegister extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-            MySqlEdit ms = new MySqlEdit();
+
             HttpSession session = req.getSession();
             Users temp = (Users) session.getAttribute("acceptUser");
-            ms.register(temp);
+            MySqlEdit.register(temp);
 
             session.removeAttribute("acceptUser");
 

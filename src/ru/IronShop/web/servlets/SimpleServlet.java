@@ -20,7 +20,7 @@ public class SimpleServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-            MySqlEdit ms = new MySqlEdit();
+            //MySqlEdit ms = new MySqlEdit();
 
 
         Users u = new Users("q","w","e","r","y");

@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -81,7 +82,9 @@
             <div class="products">
                 <div class="cl">&nbsp;</div>
                 <ul>
+
         <c:forEach var ="p" items="${requestScope.product}">
+
                         ${p.class_name}
                             <a href="#"><img src="${p.image}" alt="" /></a>
                             <div class="product-info">
@@ -94,6 +97,8 @@
                             </div>
                     </li>
         </c:forEach>
+
+
                 </ul>
 
                 <div class="cl">&nbsp;</div>
@@ -148,20 +153,15 @@
                 <h2>Categories <span></span></h2>
                 <div class="box-content">
                     <ul>
-                        <li><a href="#">Category 1</a></li>
-                        <li><a href="#">Category 2</a></li>
-                        <li><a href="#">Category 3</a></li>
-                        <li><a href="#">Category 4</a></li>
-                        <li><a href="#">Category 5</a></li>
-                        <li><a href="#">Category 6</a></li>
-                        <li><a href="#">Category 7</a></li>
-                        <li><a href="#">Category 8</a></li>
-                        <li><a href="#">Category 9</a></li>
-                        <li><a href="#">Category 10</a></li>
-                        <li><a href="#">Category 11</a></li>
-                        <li><a href="#">Category 12</a></li>
-                        <li class="last"><a href="#">Category 13</a></li>
-                    </ul>
+                        <c:forEach var ="p" items="${requestScope.category}" varStatus="i">
+                            <c:if test="${i.count != requestScope.category_last}">
+                                <li><a href="MySite?category=${p.id}">${p.nameCategories}</a></li>
+                            </c:if>
+                            <c:if test="${i.count == requestScope.category_last}">
+                                <li class="last"><a href="MySite?category=${p.id}">${p.nameCategories}</a></li>
+                            </c:if>
+                        </c:forEach>
+</ul>
                 </div>
             </div>
             <!-- End Categories -->
