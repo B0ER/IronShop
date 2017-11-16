@@ -48,6 +48,9 @@ public class RegisterServlets extends HttpServlet {
                 session.setAttribute("session_user_name",temp.get(0).name);
                 session.setAttribute("session_user_fam",temp.get(0).fam);
                 session.setAttribute("session_user_mail",temp.get(0).mail);
+                session.setAttribute("session_user_sum_art",MySqlEdit.counter("SELECT * FROM basket WHERE basket.id_user = "+temp.get(0).id+";"));
+                session.setAttribute("session_user_sum_cost",MySqlEdit.getCost(Integer.parseInt(temp.get(0).id)));
+
             System.out.println("1"+temp.get(0).id);
                 if(MySqlEdit.counter("SELECT * FROM admin WHERE admin.user_id = '"+temp.get(0).id+"';")>0)
                 {

@@ -14,8 +14,6 @@ import java.io.IOException;
 public class AcceptRegister extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
             HttpSession session = req.getSession();
             Users temp = (Users) session.getAttribute("acceptUser");
             MySqlEdit.register(temp);

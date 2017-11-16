@@ -6,7 +6,6 @@ import ru.IronShop.web.ObjectSite.Users;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class MySqlEdit {
@@ -16,72 +15,80 @@ public class MySqlEdit {
     private static final String password = "4665EAaYk5Wp3BDX";
 
 
-    private  static Connection cn;
-    private  static Statement st;
-    private  static ResultSet rs;
+    private static Connection cn;
+    private static Statement st;
+    private static ResultSet rs;
 
-static{
-    try {
-        Class.forName("com.mysql.jdbc.Driver");
-        cn = DriverManager.getConnection(url, user, password);
-        st = cn.createStatement();
-    } catch (ClassNotFoundException e) {
-        e.printStackTrace();
+    static {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            cn = DriverManager.getConnection(url, user, password);
+            st = cn.createStatement();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            ;
+        }
     }
-    catch(SQLException e){;}
-}
 
-   // public MySqlEdit(){}
+    // public MySqlEdit(){}
 
-    public static List<Users> getAllUsers(String quare){
+    public static List<Users> getAllUsers(String quare) {
 
         List<Users> list = new ArrayList<Users>();
         try {
 
             rs = st.executeQuery(quare);
             while (rs.next()) {
-                Users u = new Users(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
+                Users u = new Users(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
                 list.add(u);
             }
-            }catch (Exception e){list.add(new Users(""+e,"Eror","Error","Eror","Eror"));}
+        } catch (Exception e) {
+            list.add(new Users("" + e, "Eror", "Error", "Eror", "Eror"));
+        }
         return list;
-        }
+    }
 
-        public static  List<Product> getProduct(String quare){
-            List<Product> list = new ArrayList<Product>();
-            try {
-                int counter=0;
-                rs = st.executeQuery(quare);
-                while (rs.next()) {
-                    counter++;
-                        Product p = new Product(rs.getInt(1),((counter%3) == 0)?"<li class = \"last\">":"<li>",rs.getString(2),rs.getString(3)
-                        ,rs.getString(5),rs.getString(6),rs.getString(7),
-                                rs.getInt(8));
-                        list.add(p);
-
-                }
-            }catch (Exception e){;}
-            return list;
-
-
-        }
-
-
-
-    public static void register(Users a){
+    public static List<Product> getProduct(String quare) {
+        List<Product> list = new ArrayList<Product>();
         try {
-            st.executeUpdate("INSERT INTO users(name,fam,mail,password) VALUES('"+a.name+"','"+a.fam+"','"+a.mail+"','"+a.password+"');");
-            }catch (SQLException e){;}
+            int counter = 0;
+            rs = st.executeQuery(quare);
+            while (rs.next()) {
+                counter++;
+                Product p = new Product(rs.getInt(1), ((counter % 3) == 0) ? "<li class = \"last\">" : "<li>", rs.getString(2), rs.getString(3)
+                        , rs.getString(5), rs.getString(6), rs.getString(7),
+                        rs.getInt(8));
+                list.add(p);
+
+            }
+        } catch (Exception e) {
+            ;
         }
+        return list;
+
+
+    }
+
+
+    public static void register(Users a) {
+        try {
+            st.executeUpdate("INSERT INTO users(name,fam,mail,password) VALUES('" + a.name + "','" + a.fam + "','" + a.mail + "','" + a.password + "');");
+        } catch (SQLException e) {
+            ;
+        }
+    }
 
 
     public static int counter(String quare) {
-        int count=0;
+        int count = 0;
         try {
             rs = st.executeQuery(quare);
             rs.last();
             count = rs.getRow();
-        }catch (SQLException e){System.out.println(""+e);}
+        } catch (SQLException e) {
+            System.out.println("" + e);
+        }
         return count;
     }
 
@@ -100,7 +107,47 @@ static{
         return list;
     }
 
+    public static double getCost(int user_id) {
+        double sum = 0;
+        List<mySqlBasket> userCoust = new ArrayList<>();
+        List<Product> productCost = getProduct("SELECT * FROM product");
+        try {
+            rs = st.executeQuery("SELECT * FROM basket WHERE basket.id_user = " + user_id);
+            while (rs.next()) {
+                userCoust.add(new mySqlBasket(rs.getInt(1), rs.getInt(2), rs.getInt(3)));
+            }
+
+            for (int i = 0; i < userCoust.size(); i++) {
+                for (int j = 0; j < productCost.size(); j++) {
+                    if (userCoust.get(i).id_product == productCost.get(j).id) {
+                        sum += Double.parseDouble(productCost.get(i).price);
+                        break;
+                    }
+                }
+            }
+
+
+        } catch (SQLException e) {
+            ;
+        }
+
+        return sum;
     }
+
+
+    static class mySqlBasket {
+        public int id_basket;
+        public int id_product;
+        public int id_user;
+
+        public mySqlBasket(int id_basket, int id_product, int id_user) {
+            this.id_basket = id_basket;
+            this.id_product = id_product;
+            this.id_user = id_user;
+        }
+    }
+
+}
 
 
 

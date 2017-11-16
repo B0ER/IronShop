@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ironshop" default="compile">
+
+  <path id = "common_library">
+    <pathelement location="C:\TomcatServer\lib\servlet-api.jar"/>
+    <pathelement location="web\WEB-INF\lib\javax.mail-1.5.0.jar"/>
+    <pathelement location="web\WEB-INF\lib\smtp-1.5.0.jar"/>
+    <pathelement location="web\WEB-INF\lib\activation-2.2.1.jar"/>
+  </path>
+
+  <target name = "clean">
+    <delete dir="web/WEB-INF/classes/ru"/>
+  </target>
+
+  <target name="compile" depends="clean">
+    <javac srcdir="src" destdir="web/WEB-INF/classes" failonerror="true"  fork="true">
+      <classpath refid="common_library"/>
+    </javac>
+  </target>
+
+</project>

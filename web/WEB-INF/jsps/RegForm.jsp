@@ -10,9 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-
     <link rel="stylesheet" href="RegStyle/css/style.css">
-
 
 </head>
 
@@ -99,11 +97,8 @@
                 <p class="forgot"><a href="https://xplayon.com/images/softimages0/17-10/Eto-Fiasko-bratan/Eto-Fiasko-bratan-1.jpg">Забыли пароль?</a></p>
 
                 <button name="send" value="false" class="button button-block"/>Вход</button>
-
             </form>
-
         </div>
-
     </div><!-- tab-content -->
 
 </div> <!-- /form -->
@@ -113,4 +108,3 @@
 
 </body>
 </html>
-
