@@ -7,16 +7,16 @@
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>Магазин IronShop</title>
-    <link rel="stylesheet" href="../../../StyleMainIronShop/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="StyleMainIronShop/css/style.css" type="text/css" media="all" />
     <!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
 
     <meta name="keywwords" content="Shop Around - Great free html template for on-line shop. Use it as a start point for your on line business. The template can be easily implemented in many open source E-commerce platforms" />
     <meta name="description" content="Shop Around - Great free html template for on-line shop. Use it as a start point for your on line business. The template can be easily implemented in many open source E-commerce platforms" />
 
     <!-- JS -->
-    <script src="../../../StyleMainIronShop/js/jquery-1.4.1.min.js" type="text/javascript"></script>
-    <script src="../../../StyleMainIronShop/js/jquery.jcarousel.pack.js" type="text/javascript"></script>
-    <script src="../../../StyleMainIronShop/js/jquery-func.js" type="text/javascript"></script>
+    <script src="StyleMainIronShop/js/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="StyleMainIronShop/js/jquery.jcarousel.pack.js" type="text/javascript"></script>
+    <script src="StyleMainIronShop/js/jquery-func.js" type="text/javascript"></script>
     <!-- End JS -->
 
 </head>
@@ -63,10 +63,10 @@
             <div id="slider" class="box">
                 <div id="slider-holder">
                     <ul>
-                        <li><a href="#"><img src="../../../StyleMainIronShop/css/images/slide1.jpg" alt="" /></a></li>
-                        <li><a href="#"><img src="../../../StyleMainIronShop/css/images/slide1.jpg" alt="" /></a></li>
-                        <li><a href="#"><img src="../../../StyleMainIronShop/css/images/slide1.jpg" alt="" /></a></li>
-                        <li><a href="#"><img src="../../../StyleMainIronShop/css/images/slide1.jpg" alt="" /></a></li>
+                        <li><a href="#"><img src="StyleMainIronShop/css/images/slide1.jpg" alt="" /></a></li>
+                        <li><a href="#"><img src="StyleMainIronShop/css/images/slide1.jpg" alt="" /></a></li>
+                        <li><a href="#"><img src="StyleMainIronShop/css/images/slide1.jpg" alt="" /></a></li>
+                        <li><a href="#"><img src="StyleMainIronShop/css/images/slide1.jpg" alt="" /></a></li>
                     </ul>
                 </div>
                 <div id="slider-nav">
@@ -180,27 +180,14 @@
         <div class="more-products">
             <div class="more-products-holder">
                 <ul>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small1.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small2.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small3.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small4.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small5.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small6.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small7.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small1.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small2.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small3.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small4.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small5.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small6.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small7.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small1.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small2.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small3.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small4.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small5.jpg" alt="" /></a></li>
-                    <li><a href="#"><img src="../../../StyleMainIronShop/css/images/small6.jpg" alt="" /></a></li>
-                    <li class="last"><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="StyleMainIronShop/css/images/small1.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="StyleMainIronShop/css/images/small2.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="StyleMainIronShop/css/images/small3.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="StyleMainIronShop/css/images/small4.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="StyleMainIronShop/css/images/small5.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="StyleMainIronShop/css/images/small6.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="StyleMainIronShop/css/images/small7.jpg" alt="" /></a></li>
+                    <li class="last"><a href="#"><img src="StyleMainIronShop/css/images/small7.jpg" alt="" /></a></li>
                 </ul>
             </div>
             <div class="more-nav">
