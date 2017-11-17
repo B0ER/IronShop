@@ -35,7 +35,7 @@
         <!-- Cart -->
         <c:if test="${sessionScope.session_user_name != null}">
             <div id="cart">
-                <a href="Basket" class="cart-link">Корзина</a>
+                <a href="BasketAct" class="cart-link">Корзина</a>
                 <div class="cl">&nbsp;</div>
                 <span>Кол-во: <strong>${session_user_sum_art}</strong></span>
                 &nbsp;&nbsp;
@@ -52,7 +52,7 @@
                 <li><a href="https://vk.com/sanek_ru">Dev</a></li>
                 <li><a href="https://vk.com/id_679523328">Dev</a></li>
                 <c:if test="${sessionScope.session_user_name != null}">
-                <li><a href="ExitLogin">Выйти с аккаунта</a></li>
+                    <li><a href="ExitLogin">Выйти с аккаунта</a></li>
                 </c:if>
 
 
@@ -91,11 +91,27 @@
             <!-- Products -->
             <div class="products">
 
-                <table border="1">
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
+                <table border="1" width="100%">
+
+                    <td> Картинка</td>
+                    <td> Имя фирмы</td>
+                    <td> Модель</td>
+                    <td> Цена</td>
+                    <td> ДЕЙСТВИЕ</td>
                     </tr>
+
+
+                    <c:forEach var="i" items="${requestScope.userBasket}">
+                        <tr>
+                            <td><img src="${i.image_product}"/></td>
+                            <td> ${i.name_product} </td>
+                            <td> ${i.model_product} </td>
+                            <td> ${i.price_model} руб.</td>
+                            <td><a href="#">Удалить</a></td>
+                        </tr>
+                    </c:forEach>
+
+
                 </table>
             </div>
             <!-- End Products -->
@@ -105,6 +121,7 @@
 
         <!-- Sidebar -->
         <div id="sidebar">
+
             <!-- Categories -->
             <div class="box categories">
                 <h2>Categories <span></span></h2>

@@ -1,5 +1,6 @@
 package ru.IronShop.web.MySql;
 
+import ru.IronShop.web.ObjectSite.Basket;
 import ru.IronShop.web.ObjectSite.DataOfProduct.Category;
 import ru.IronShop.web.ObjectSite.DataOfProduct.Product;
 import ru.IronShop.web.ObjectSite.Users;
@@ -116,7 +117,6 @@ public class MySqlEdit {
             while (rs.next()) {
                 userCoust.add(new mySqlBasket(rs.getInt(1), rs.getInt(2), rs.getInt(3)));
             }
-
             for (int i = 0; i < userCoust.size(); i++) {
                 for (int j = 0; j < productCost.size(); j++) {
                     if (userCoust.get(i).id_product == productCost.get(j).id) {
@@ -125,15 +125,26 @@ public class MySqlEdit {
                     }
                 }
             }
-
-
-        } catch (SQLException e) {
-            ;
-        }
+        } catch (SQLException e) {;}
 
         return sum;
     }
 
+    public static List<Basket> getUserBasket(int user_id) {
+        List<Basket> userCoust = new ArrayList<>();
+        try {
+            //SELECT product.id_product, product.image, product.name, product.model, product.price from product RIGHT JOIN basket ON
+            // product.id_product = basket.id_product WHERE basket.id_user = 21
+            rs = st.executeQuery("SELECT product.id_product, product.image, product.name, product.model, product.price from product" +
+                    " RIGHT JOIN basket ON product.id_product = basket.id_product WHERE basket.id_user=" + user_id);
+            while (rs.next()) {
+                userCoust.add(new Basket(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4), rs.getString(5)));
+            }
+
+        } catch (SQLException e) {;}
+
+        return userCoust;
+    }
 
     static class mySqlBasket {
         public int id_basket;
@@ -148,7 +159,3 @@ public class MySqlEdit {
     }
 
 }
-
-
-
-
