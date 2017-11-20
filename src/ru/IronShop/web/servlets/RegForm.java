@@ -7,9 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-/**
- * Created by Elena on 27.10.2017.
- */
 public class RegForm extends HttpServlet {
 
     @Override

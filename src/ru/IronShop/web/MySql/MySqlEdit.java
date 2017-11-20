@@ -80,6 +80,12 @@ public class MySqlEdit {
         }
     }
 
+    public static void updateInfo(String quary){
+        try {
+            st.executeUpdate(quary);
+        }catch (SQLException e){;}
+    }
+
 
     public static int counter(String quare) {
         int count = 0;

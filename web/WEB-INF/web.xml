@@ -53,7 +53,7 @@
         <servlet-name>Admin</servlet-name>
         <url-pattern>/Admin</url-pattern>
     </servlet-mapping>
-    
+
     <servlet-mapping>
         <servlet-name>Simple</servlet-name>
         <url-pattern>/simple</url-pattern>

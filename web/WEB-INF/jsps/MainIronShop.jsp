@@ -30,7 +30,7 @@
 
     <!-- Header -->
     <div id="header">
-        <h1 id="logo"><a href="#">IronShop</a></h1>
+        <h1 id="logo"><a href="">IronShop</a></h1>
 
         <!-- Cart -->
         <c:if test="${sessionScope.session_user_name != null}">
@@ -48,7 +48,9 @@
         <div id="navigation">
             <ul>
                 <li><a href="MySite" class="active">Главная страница</a></li>
-                <li><a href="RegForm">Авторизация/Регистрация</a></li>
+                <c:if test="${sessionScope.session_user_name == null}">
+                    <li><a href="RegForm">Авторизация/Регистрация</a></li>
+                </c:if>
                 <li><a href="https://vk.com/sanek_ru">Dev</a></li>
                 <li><a href="https://vk.com/id_679523328">Dev</a></li>
                 <c:if test="${sessionScope.session_user_name != null}">
@@ -90,29 +92,43 @@
 
             <!-- Products -->
             <div class="products">
-
-                <table border="1" width="100%">
-
-                    <td> Картинка</td>
-                    <td> Имя фирмы</td>
-                    <td> Модель</td>
-                    <td> Цена</td>
-                    <td> ДЕЙСТВИЕ</td>
-                    </tr>
-
-
-                    <c:forEach var="i" items="${requestScope.userBasket}">
-                        <tr>
-                            <td><img src="${i.image_product}"/></td>
-                            <td> ${i.name_product} </td>
-                            <td> ${i.model_product} </td>
-                            <td> ${i.price_model} руб.</td>
-                            <td><a href="#">Удалить</a></td>
+                <c:if test="${(requestScope.userBasket != null)}">
+                    <table border="1" width="100%">
+                        <td> Картинка</td>
+                        <td> Имя фирмы</td>
+                        <td> Модель</td>
+                        <td> Цена</td>
+                        <td> ДЕЙСТВИЕ</td>
                         </tr>
-                    </c:forEach>
+                        <c:forEach var="i" items="${requestScope.userBasket}">
+                            <tr>
+                                <td><img src="${i.image_product}"/></td>
+                                <td> ${i.name_product} </td>
+                                <td> ${i.model_product} </td>
+                                <td> ${i.price_model} руб.</td>
+                                <td><a href="#">Удалить</a></td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </c:if>
 
-
-                </table>
+                <c:if test="${(requestScope.userBasket == null) && (requestScope.product != null)}">
+                    <ul>
+                        <c:forEach var="p" items="${requestScope.product}">
+                            ${p.class_name}
+                            <a href="#"><img src="${p.image}" alt=""/></a>
+                            <div class="product-info">
+                                <h3>${p.model}</h3>
+                                <div class="product-desc">
+                                    <h4>Пол: ${p.sex}</h4>
+                                    <p>Описание:<br>${p.desk}</p>
+                                    <strong class="price">${p.price} руб.</strong>
+                                </div>
+                            </div>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </c:if>
             </div>
             <!-- End Products -->
 
@@ -124,7 +140,7 @@
 
             <!-- Categories -->
             <div class="box categories">
-                <h2>Categories <span></span></h2>
+                <h2>Категории <span></span></h2>
                 <div class="box-content">
                     <ul>
                         <c:forEach var="p" items="${requestScope.category}" varStatus="i">
@@ -143,7 +159,7 @@
         </div>
         <!-- End Sidebar -->
 
-        <div class="cl">&nbsp;</div>
+       <div class="cl">&nbsp;</div>
     </div>
     <!-- End Main -->
 
@@ -219,8 +235,8 @@
             <a href="#">Contact</a>
         </p>
         <p class="right">
-            &copy; 2010 Shop Around.
-            Design by <a href="http://chocotemplates.com" target="_blank" title="The Sweetest CSS Templates WorldWide">Chocotemplates.com</a>
+            &copy; 2017 IronShop.
+            By: impossible and B0ER <a href="http://chocotemplates.com" target="_blank" title="The Sweetest CSS Templates WorldWide">IronMines.ru</a>
         </p>
     </div>
     <!-- End Footer -->
