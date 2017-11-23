@@ -1,0 +1,142 @@
+body,html {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+
+.menu{
+    margin-top: -50px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background: #8b0000;
+    border-radius: 10px;
+
+}
+
+.text__center{
+    text-align: center;
+    font-size: 70px;
+    font-family: sans-serif;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.text__bottom {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+
+}
+.left{
+    display: inline-block;
+    width: 250px;
+    min-height: 100px;
+    border-right:3px solid #8b0000;
+    text-align: center;
+    margin-right: 50px;
+    float:left;
+    content:"";
+}
+
+.left>a{
+    font-size: 20px;
+    font-family: sans-serif;
+    color: black;
+    text-decoration: none;
+    line-height: 2;
+}
+.left>a:hover{
+    border-bottom:3px solid #8b0000;
+}
+.go{
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #8b0000;
+    text-decoration: none;
+    line-height: 2;
+    float: right;
+    margin:0 40px 0 0 ;
+}
+
+.right{
+    float:left;
+    content:"";
+    display: inline-block;
+    width: 1000px;
+    text-align: center;
+}
+h1{
+    font-size: 25px;
+    font-family: sans-serif;
+    color: black;
+    text-decoration: none
+}
+
+.input{
+    width: 200px;
+    height: 25px;
+    margin: 10px 0;
+
+
+}
+
+form{
+    display: inline-block;
+    min-width: 850px;
+    text-align: left;
+}
+
+input{
+    display: block;
+    min-width: 55px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #8b0000;
+    outline:none;
+    padding:0 10px;
+    margin-top:10px;
+}
+select{
+    display: block;
+    min-width: 70px;
+    min-height: 15px;
+    border-radius: 10px;
+    border: 1px solid #8b0000;
+    outline:none;
+    padding:5px 10px;
+    margin-top:10px;
+}
+
+input[type="button"]{
+    background-color: white;
+    cursor: pointer;
+    min-width: 100px;
+    height: 30px;
+    margin:30px 0 0 55px;
+}
+
+input[type="button"]{
+    background-color: white;
+    cursor: pointer;
+    min-width: 100px;
+    height: 30px;
+    margin:30px 0 10px 55px;
+}
+
+input[type="radio"]{
+    display:inline-block;
+    position: relative;
+    top:3px;
+    cursor: pointer;
+
+}
+
+
+.radio{
+    position: relative;
+    top:3px;
+    left:280px;
+    padding-bottom: 40px;
+}

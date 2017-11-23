@@ -1,0 +1,31 @@
+body,html {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+
+.menu{
+    margin-top: -50px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background: #8b0000;
+    border-radius: 10px;
+
+}
+
+.text__center{
+    text-align: center;
+    font-size: 70px;
+    font-family: sans-serif;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.text__bottom {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+
+}
