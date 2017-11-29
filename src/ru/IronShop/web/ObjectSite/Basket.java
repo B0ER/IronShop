@@ -8,15 +8,16 @@ public class Basket {
     public String model_product;
     public String price_model;
     public Integer id_basket;
+    public Integer count;
 
-    public Basket(Integer id_product, String image_product, String name_product, String model_product, String price_model,Integer id_basket) {
+    public Basket(Integer id_product, String image_product, String name_product, String model_product, String price_model,Integer id_basket, Integer count) {
         this.id_product = id_product;
         this.image_product = image_product;
         this.name_product = name_product;
         this.model_product = model_product;
         this.price_model = price_model;
         this.id_basket = id_basket;
-
+        this.count = count;
     }
 
     public Integer getId_product() {
@@ -65,6 +66,14 @@ public class Basket {
 
     public void setId_basket(Integer id_basket) {
         this.id_basket = id_basket;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
     }
 }
 

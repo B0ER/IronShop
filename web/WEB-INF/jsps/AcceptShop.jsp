@@ -28,25 +28,28 @@
         <th align="left"> Товар</th>
         <th> Производитель</th>
         <th > Модель</th>
+        <th > Кол-во</th>
         <th > Цена</th>
     </tr>
     <tr>
-        <td bgcolor="black" colspan="4"></td>
+        <td bgcolor="black" colspan="5"></td>
     </tr>
     <c:forEach var="i" items="${requestScope.userBasket}">
         <tr align="center">
             <td align="left" width="400"><img width="150" height="150" src="${i.image_product}"/></td>
             <td width="400"> ${i.name_product} </td>
             <td width="400"> ${i.model_product} </td>
+            <td width="400"> ${i.count} </td>
             <td width="400" > ${i.price_model} руб.</td>
         </tr>
         <tr>
-            <td bgcolor="black" colspan="4"></td>
+            <td bgcolor="black" colspan="5"></td>
         </tr>
     </c:forEach>
     <tr align="center" >
         <th align="left"> Кол-во товаров: ${sessionScope.session_user_sum_art}</th>
         <td> </td>
+        <td > </td>
         <td > </td>
         <th>Итоговая цена: ${sessionScope.session_user_sum_cost} руб. </th>
     </tr>

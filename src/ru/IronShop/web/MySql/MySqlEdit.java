@@ -142,8 +142,17 @@ public class MySqlEdit {
             rs = st.executeQuery("SELECT product.id_product, product.image, product.name, product.model, product.price, basket.id_basket from product" +
                     " RIGHT JOIN basket ON product.id_product = basket.id_product WHERE basket.id_user=" + user_id);
             while (rs.next()) {
-              
-                userCoust.add(new Basket(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4), rs.getString(5),rs.getInt(6)));
+                boolean check = true;
+                if(userCoust.size()>0)
+                for(int i=0;i<userCoust.size();i++){
+                   if( rs.getInt(1) == userCoust.get(i).id_product){
+                       userCoust.get(i).count+=1;
+                       check = false;
+                       break;
+                   }
+                }
+                if(check == true)
+                userCoust.add(new Basket(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4), rs.getString(5),rs.getInt(6),1));
             }
 
         } catch (SQLException e) {;}

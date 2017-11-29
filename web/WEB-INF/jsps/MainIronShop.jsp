@@ -73,12 +73,15 @@
 
             <!-- Products -->
             <div class="products">
+
                 <c:if test="${(requestScope.userBasket != null)}">
-                    <table border="1" width="100%">
+                    <c:if test="${session_user_sum_cost >0}">
+                    <table border="1" width="700">
                         <tr>
                         <td align="center"> Товар</td>
                         <td align="center"> Производитель</td>
                         <td align="center"> Модель</td>
+                        <td align="center" > Кол-во</td>
                         <td align="center"> Цена</td>
                         <td align="center"> ДЕЙСТВИЕ</td>
                         </tr>
@@ -87,18 +90,23 @@
                                 <td width="100"><img width="100" height="100" src="${i.image_product}"/></td>
                                 <td align="center"> ${i.name_product} </td>
                                 <td align="center"> ${i.model_product} </td>
+                                <td align="center"> ${i.count} </td>
                                 <td align="center"> ${i.price_model} руб.</td>
                                 <td align="center"><a href="AddProductToBasket?delBasket=${i.id_basket}">Удалить</a></td>
                             </tr>
                         </c:forEach>
-                        <tr border="0">
-                            <td colspan="5" align="center" bo>
+                        <tr style="border: hidden">
+                            <td colspan="6" align="center" height="40" >
                         <form action="SendShop">
-                            <button type="submit" style="background: #8b0000; color:white; width: 717px;font-family: Trebuchet MS">Оформить заказ</button>
+                            <button type="submit" style="background: #8b0000; color:white; width: 300px; height:30px; font-family: Trebuchet MS">Оформить заказ на сумму: ${session_user_sum_cost} р.</button>
                         </form>
                             </td>
                         </tr>
                     </table>
+                    </c:if>
+                    <c:if test="${session_user_sum_cost <=0}">
+                    <label style="font-size: 50px;">Ваша корзина пуста!</label>
+                    </c:if>
                 </c:if>
 
                 <c:if test="${(requestScope.userBasket == null) && (requestScope.product != null)}">

@@ -22,9 +22,9 @@ public class SendShop extends HttpServlet {
         if(session.getAttribute("session_user_id") != null) {
             List<Basket> basketList = MySqlEdit.getUserBasket(Integer.parseInt((String) session.getAttribute("session_user_id")));
 
-            String text = "Brand\t\t\tModel\t\t\tPrice\n";
+            String text = "Brand\t\t\tModel\t\t\tCount\t\t\tPrice\n";
             for(Basket t :basketList){
-                text+=t.getName_product()+"\t"+t.getModel_product()+"\t"+t.getPrice_model()+" RUB\n";
+                text+=t.getName_product()+"\t"+t.getModel_product()+"\t"+t.count+"\t"+t.getPrice_model()+" RUB\n";
             }
             text+="Total cost:"+session.getAttribute("session_user_sum_cost")+" RUB\n";
             mail.sendMessage((String)session.getAttribute("session_user_mail"),
