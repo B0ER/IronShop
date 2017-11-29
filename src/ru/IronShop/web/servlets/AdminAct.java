@@ -13,10 +13,7 @@ public class AdminAct extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //Проверка нажатия кнопки юзера
         if (req.getParameter("user") != null) {
-
-            //если добавляют
             if (req.getParameter("two").equals("add")) {
                 MySqlEdit.updateInfo("INSERT INTO users(name,fam,mail,password) " +
                         "VALUES('" + req.getParameter("name") + "', '" + req.getParameter("fam") + "', '" +
@@ -27,29 +24,21 @@ public class AdminAct extends HttpServlet {
                             MySqlEdit.getAllUsers("SELECT * FROM users WHERE mail='" + req.getParameter("login") + "';").get(0).getId() + "');");
                 }
             }
-            //если удаляют
             else if (req.getParameter("two").equals("del")) {
-
                 MySqlEdit.updateInfo("DELETE FROM users " +
                         "WHERE mail='" + req.getParameter("login") + "';");
             }
-            //если добавляют и сразу в админы
-
         }
 
-        //Проверка нажатия кнопки Админа
         if (req.getParameter("admin") != null) {
-            //Добавление админа по id
             if (req.getParameter("three").equals("add")) {
                 MySqlEdit.updateInfo("INSERT INTO admin(user_id) VALUES (" + req.getParameter("id_admin") + ");");
             }
-            //Удаление админа по id
             else if (req.getParameter("three").equals("del")) {
                 MySqlEdit.updateInfo("DELETE FROM admin WHERE user_id=" + req.getParameter("id_admin") + ";");
             }
         }
 
-        //Проверка нажатия кнопки продукта(товара)
         if (req.getParameter("Product") != null) {
             //Добавление товара
             if (req.getParameter("four").equals("add")) {
@@ -66,24 +55,15 @@ public class AdminAct extends HttpServlet {
         }
 
         if (req.getParameter("Category_form") != null) {
-            //добавление категории
             if (req.getParameter("five").equals("add")) {
                 MySqlEdit.updateInfo("INSERT INTO category(name) VALUES ('" + req.getParameter("name_cat") + "');");
             }
-            //удаление категории
             else if (req.getParameter("five").equals("del")) {
                 MySqlEdit.updateInfo("DELETE FROM category WHERE name='" + req.getParameter("name_cat") + "';");
             }
         }
-
-        //переход назад в админ панель
         req.setAttribute("key", "f952dgsc8Cji31916WdkTNrodZAEngwkCdl7TWdK6wjI6R5O0Mpu6wAjAowG99FR");
         req.getRequestDispatcher("Admin").forward(req, resp);
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
     }
 }

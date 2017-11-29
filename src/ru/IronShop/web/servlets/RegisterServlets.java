@@ -15,18 +15,12 @@ import java.util.List;
 public class RegisterServlets extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    }
-
-    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         Mail mail = new Mail();
         req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
 
-        //Регистрация
+        //Register
         if (req.getParameter("send").equals("true")) {
             Users u = new Users("0", req.getParameter("name"), req.getParameter("fam"), req.getParameter("mail"), req.getParameter("password"));
             session.setAttribute("acceptUser", u);
@@ -39,11 +33,10 @@ public class RegisterServlets extends HttpServlet {
                             "To proceed with the registration, click on the link http://localhost/Accept \n" +
                             "Otherwise, just ignore this message.\n" +
                             "Thank you for your attention. PS: Imposible and B0ER company!");
-
             req.getRequestDispatcher("WEB-INF/jsps/AcceptMailPage.jsp").forward(req, resp);
         }
         if (req.getParameter("send").equals("false")) {
-            //Авторизация
+            //Login
             List<Users> temp = MySqlEdit.getAllUsers("SELECT * FROM users WHERE users.mail='" + req.getParameter("mail") + "' AND users.password = '" + req.getParameter("password") + "';");
             System.out.println("1");
             session.setAttribute("session_user_id", temp.get(0).id);

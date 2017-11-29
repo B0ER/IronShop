@@ -30,7 +30,6 @@ public class AddProductToBasket extends HttpServlet {
                 //req.setAttribute("userBasket",null);
                 req.getRequestDispatcher("BasketAct").forward(req, resp);
             }
-
         }
         else{
             req.getRequestDispatcher("RegForm").forward(req, resp);

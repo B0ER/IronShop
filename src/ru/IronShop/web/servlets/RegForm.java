@@ -10,20 +10,18 @@ import java.io.IOException;
 public class RegForm extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        request.setCharacterEncoding("UTF-8");
-
-        request.getRequestDispatcher("WEB-INF/jsps/RegForm.jsp").forward(request, response);
-
-
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        goToRegistration(req,resp);
     }
 
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
-
-        req.getRequestDispatcher("WEB-INF/jsps/RegForm.jsp").forward(req, resp);
+        goToRegistration(req,resp);
     }
+
+        void goToRegistration(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException{
+            req.setCharacterEncoding("UTF-8");
+            req.getRequestDispatcher("WEB-INF/jsps/RegForm.jsp").forward(req, resp);
+        }
 }

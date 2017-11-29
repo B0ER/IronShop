@@ -15,21 +15,11 @@ public class BasketAct extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
-
-
         if(session.getAttribute("session_user_id") != null) {
-
-
             List<Basket> basketList = MySqlEdit.getUserBasket(Integer.parseInt((String) session.getAttribute("session_user_id")));
             req.setAttribute("userBasket", basketList);
         }
         req.getRequestDispatcher("IronShop").forward(req, resp);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
-
-        req.getRequestDispatcher("IronShop").forward(req, resp);
-    }
 }

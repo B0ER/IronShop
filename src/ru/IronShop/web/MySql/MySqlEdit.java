@@ -139,11 +139,11 @@ public class MySqlEdit {
     public static List<Basket> getUserBasket(int user_id) {
         List<Basket> userCoust = new ArrayList<>();
         try {
-
             rs = st.executeQuery("SELECT product.id_product, product.image, product.name, product.model, product.price, basket.id_basket from product" +
                     " RIGHT JOIN basket ON product.id_product = basket.id_product WHERE basket.id_user=" + user_id);
             while (rs.next()) {
-                userCoust.add(new Basket(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4), rs.getString(5),rs.getString(6)));
+              
+                userCoust.add(new Basket(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4), rs.getString(5),rs.getInt(6)));
             }
 
         } catch (SQLException e) {;}

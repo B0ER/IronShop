@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-public class ErrorRegister extends HttpServlet {
+public class ErrorRegForm extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         MySqlEdit ms = new MySqlEdit();

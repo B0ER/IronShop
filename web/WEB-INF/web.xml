@@ -14,7 +14,7 @@
     </servlet>
     <servlet>
         <servlet-name>Admin</servlet-name>
-        <servlet-class>ru.IronShop.web.servlets.Admin_add</servlet-class>
+        <servlet-class>ru.IronShop.web.servlets.AdminPanelLogin</servlet-class>
 
     </servlet>
 
@@ -38,11 +38,11 @@
 
     <servlet>
         <servlet-name>Accept</servlet-name>
-        <servlet-class>ru.IronShop.web.servlets.AcceptRegister</servlet-class>
+        <servlet-class>ru.IronShop.web.servlets.ConfirmAction</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ErrorSign</servlet-name>
-        <servlet-class>ru.IronShop.web.servlets.ErrorRegister</servlet-class>
+        <servlet-class>ru.IronShop.web.servlets.ErrorRegForm</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ExitLogin</servlet-name>

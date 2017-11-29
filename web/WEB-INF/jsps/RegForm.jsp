@@ -7,13 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign-Up/Login Form</title>
-    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
     <link rel="stylesheet" href="RegStyle/css/style.css">
-
 </head>
-
 <body>
 <div class="form">
 
@@ -35,7 +30,6 @@
                         </label>
                         <input type="text" name="name"  required autocomplete="off" />
                     </div>
-
                     <div class="field-wrap">
                         <label>
                             Фамилия<span class="req">*</span>
@@ -43,12 +37,9 @@
                         <input type="text" name="fam"  required autocomplete="off"/>
                     </div>
                 </div>
-
                 <c:if test="${requestScope.alreadyMail != null}">
                 <p> <div class = "error-email" style="color: Red; "><b>Данный имейл уже зарегистрирован</b></div> <p>
                 </c:if>
-
-
                 <div class="field-wrap">
                     <label>
                         Email Address<span class="req">*</span>
@@ -63,7 +54,6 @@
                     </label>
                     <input type="password" name="password"  required autocomplete="off"/>
                 </div>
-
                 <button type="submit" name="send" value="true" class="button button-block"/>Отправить</button>
 
             </form>
@@ -99,9 +89,9 @@
                 <button type="submit" name="send" value="false" class="button button-block"/>Вход</button>
             </form>
         </div>
-    </div><!-- tab-content -->
+    </div>
 
-</div> <!-- /form -->
+</div>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 <script  src="RegStyle/js/index.js"></script>

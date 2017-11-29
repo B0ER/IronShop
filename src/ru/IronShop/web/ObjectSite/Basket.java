@@ -7,9 +7,9 @@ public class Basket {
     public String name_product;
     public String model_product;
     public String price_model;
-    public String id_basket;
+    public Integer id_basket;
 
-    public Basket(Integer id_product, String image_product, String name_product, String model_product, String price_model,String id_basket) {
+    public Basket(Integer id_product, String image_product, String name_product, String model_product, String price_model,Integer id_basket) {
         this.id_product = id_product;
         this.image_product = image_product;
         this.name_product = name_product;
@@ -59,11 +59,11 @@ public class Basket {
         this.price_model = price_model;
     }
 
-    public String getId_basket() {
+    public Integer getId_basket() {
         return id_basket;
     }
 
-    public void setId_basket(String id_basket) {
+    public void setId_basket(Integer id_basket) {
         this.id_basket = id_basket;
     }
 }

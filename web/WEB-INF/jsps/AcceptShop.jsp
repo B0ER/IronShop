@@ -25,13 +25,11 @@
 <br><br><br><br>
 <table border="0"  >
     <tr align="center" >
-
-        <td align="left"> Товар</td>
-        <td> Производитель</td>
-        <td > Модель</td>
-        <td > Цена</td>
+        <th align="left"> Товар</th>
+        <th> Производитель</th>
+        <th > Модель</th>
+        <th > Цена</th>
     </tr>
-
     <tr>
         <td bgcolor="black" colspan="4"></td>
     </tr>
@@ -46,19 +44,13 @@
             <td bgcolor="black" colspan="4"></td>
         </tr>
     </c:forEach>
-    <tr align="center">
-        <td align="left"> Кол-во товаров: ${sessionScope.session_user_sum_art}</td>
+    <tr align="center" >
+        <th align="left"> Кол-во товаров: ${sessionScope.session_user_sum_art}</th>
         <td> </td>
         <td > </td>
-        <td >Итоговая цена: ${sessionScope.session_user_sum_cost} руб.</td>
+        <th>Итоговая цена: ${sessionScope.session_user_sum_cost} руб. </th>
     </tr>
 </table>
-
-
     <br>Проверьте ваш email: ${sessionScope.session_user_mail}</h1> <p>
     </c:if>
-
-
-
-
 </body>

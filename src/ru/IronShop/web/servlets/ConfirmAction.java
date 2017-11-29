@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
-public class AcceptRegister extends HttpServlet {
+public class ConfirmAction extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             HttpSession session = req.getSession();
@@ -21,8 +21,5 @@ public class AcceptRegister extends HttpServlet {
             req.setAttribute("mail",temp.mail);
             req.setAttribute("thanks","true");
         req.getRequestDispatcher("WEB-INF/jsps/AcceptMailPage.jsp").forward(req,resp);
-
-
-
     }
 }
