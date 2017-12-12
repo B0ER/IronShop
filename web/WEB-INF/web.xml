@@ -15,7 +15,6 @@
     <servlet>
         <servlet-name>Admin</servlet-name>
         <servlet-class>ru.IronShop.web.servlets.AdminPanelLogin</servlet-class>
-
     </servlet>
 
     <servlet>

@@ -40,8 +40,6 @@
                     <li><a href="#">Вы: ${session_user_fam} ${session_user_name} </a></li>
                     <li><a href="ExitLogin">Выйти с аккаунта</a></li>
                 </c:if>
-
-
             </ul>
         </div>
     </div>
