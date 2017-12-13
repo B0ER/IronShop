@@ -71,7 +71,7 @@ h1{
     font-size: 25px;
     font-family: sans-serif;
     color: black;
-    text-decoration: none
+    text-decoration: none;
 }
 
 .input{
@@ -83,8 +83,9 @@ h1{
 }
 
 form{
+
     display: inline-block;
-    min-width: 850px;
+    min-width: 1500px;
     text-align: left;
 }
 
@@ -139,4 +140,40 @@ input[type="radio"]{
     top:3px;
     left:280px;
     padding-bottom: 40px;
+}
+.titleTexArea{
+    width: 1000px;
+    display: block;
+    padding-top: 50px;
+}
+.namesTextArea{
+    display: inline-block;
+    text-align: center;
+}
+.lef_bl{
+    display: inline-block;
+    float: left;
+    margin-right: 50px;
+}
+.tex_o{
+    display: inline-block;
+    float: left;
+    width: 500px;
+    height: 600px;
+    resize: none;
+}
+
+.tex{
+    display: inline-block;
+    float: left;
+    width: 500px;
+    height: 600px;
+    resize: none;
+}
+.tex_t{
+    display: inline-block;
+    float: left;
+    width: 500px;
+    height: 600px;
+    resize: none;
 }
