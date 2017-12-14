@@ -36,8 +36,9 @@
                 <label id="fam_users" style="display: block"> Фамилия: <input class="input" required name="fam" type="text" required> </label><br>
                 <label id="login_users" style="display: block"> Логин: <input class="input" required name="login" type="email" required> </label><br>
                 <label id="pass_users" style="display: block"> Пароль: <input class="input" required name="pass" type="password" required> </label>
-                <label id="admin_users" style="display: block"> Администратор?</label> <input type="radio" name="six" value="yes" checked> Да
-                    <input type="radio" name="six" value="no"> Нет <br>
+                <div id="admin_users" style="display: block" >
+                <label style="display: block" > Администратор? </label> <input type="radio" name="six" value="yes" checked> Да
+                    <input type="radio" name="six" value="no"> Нет </div><br>
                 <input type="submit" name="user" value="Отправить">
             </div>
             <div class ="titleTexArea">
@@ -82,7 +83,7 @@
         <label class="radio"><input type="radio" name="four" onclick="addProduct();" value="add" checked> Добавить
             <input type="radio"  name="four" onclick="delProduct();" value="del"> Удалить <input type="radio" onclick="editProduct();" name="four" value="chg"> Изменить  </label><br>
         <div class="lef_bl">
-            <label id="id_product"  style="display: block"> ID продукта: <input class="input" name="id" type="text" required> </label><br>
+            <label id="id_product"  style="display: none"> ID продукта: <input class="input" name="id" type="text" required> </label><br>
             <label id="url_product"  style="display: block"> Вставить URL картинки: <input class="input" name="URLImage_product" type="text" required>
             </label><br>
             <label id="name_product"  style="display: block"> Название компании: <input class="input" type="text" name="name_product" required> </label><br>

@@ -27,10 +27,12 @@ public class IronShopMain extends HttpServlet {
 
     public void LoadMainPage(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException{
         req.setCharacterEncoding("UTF-8");
-        if(req.getParameter("category") != null)
-            req.setAttribute("product", MySqlEdit.getProduct("SELECT * FROM product WHERE product.id_category = "+req.getParameter("category")));
-        else
+        if(req.getParameter("category") != null) {
+            req.setAttribute("product", MySqlEdit.getProduct("SELECT * FROM product WHERE product.id_category = " + req.getParameter("category")));
+        } else {
+
             req.setAttribute("product", MySqlEdit.getProduct("SELECT * FROM product"));
+        }
         List<Category> temp = MySqlEdit.updateCategory();
         req.setAttribute("category", temp);
         req.setAttribute("category_last", temp.size());
