@@ -109,8 +109,13 @@
 
                 <c:if test="${(requestScope.userBasket == null) && (requestScope.product != null)}">
                     <ul>
-                        <c:forEach var="p" items="${requestScope.product}">
-                            ${p.class_name}
+                        <c:forEach var="p" items="${requestScope.product}" varStatus="i">
+                            <c:if test="${i.count % 3 == 0}">
+                                <li class = "last">
+                            </c:if>
+                            <c:if test="${i.count % 3 != 0}">
+                                <li>
+                            </c:if>
                             <a href="AddProductToBasket?toBasket=${p.id}"><img src="${p.image}" width="231"  height="383" alt=""/></a>
                             <div class="product-info">
                                 <h3>${p.model}</h3>

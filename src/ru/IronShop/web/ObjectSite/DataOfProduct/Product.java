@@ -6,7 +6,6 @@ package ru.IronShop.web.ObjectSite.DataOfProduct;
 public class Product {
 
     public Integer id;
-    public String class_name;
     public String image;
     public String model;
     public String price;
@@ -16,7 +15,6 @@ public class Product {
 
         public Product() {
             id = null;
-            class_name = null;
             image = null;
             model = null;
             price = null;
@@ -25,9 +23,8 @@ public class Product {
             id_category = null;
         }
 
-        public Product(Integer id,String class_name, String image, String model, String price, String sex, String desk, Integer id_category) {
+        public Product(Integer id, String image, String model, String price, String sex, String desk, Integer id_category) {
             this.id = id;
-            this.class_name = class_name;
             this.image = image;
             this.model = model;
             this.price = price;
@@ -93,11 +90,4 @@ public class Product {
         this.id_category = id_category;
     }
 
-    public String getClass_name() {
-        return class_name;
-    }
-
-    public void setClass_name(String class_name) {
-        this.class_name = class_name;
-    }
 }

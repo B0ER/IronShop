@@ -56,8 +56,7 @@ public class MySqlEdit {
             int counter = 0;
             rs = st.executeQuery(quare);
             while (rs.next()) {
-                counter++;
-                Product p = new Product(rs.getInt(1), ((counter % 3) == 0) ? "<li class = \"last\">" : "<li>", rs.getString(2), rs.getString(3)
+                Product p = new Product(rs.getInt(1), rs.getString(2), rs.getString(3)
                         , rs.getString(5), rs.getString(6), rs.getString(7),
                         rs.getInt(8));
                 list.add(p);
