@@ -4,7 +4,6 @@ import ru.IronShop.web.ObjectSite.Basket;
 import ru.IronShop.web.ObjectSite.DataOfProduct.Category;
 import ru.IronShop.web.ObjectSite.DataOfProduct.Product;
 import ru.IronShop.web.ObjectSite.Users;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +13,6 @@ public class MySqlEdit {
     private static final String url = "jdbc:mysql://srv4.minecraft-hosting.ru/p6048-1?characterEncoding=utf8";
     private static final String user = "p6048";
     private static final String password = "4665EAaYk5Wp3BDX";
-
-
     private static Connection cn;
     private static Statement st;
     private static ResultSet rs;
@@ -27,12 +24,9 @@ public class MySqlEdit {
             st = cn.createStatement();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (SQLException e) {
-            ;
-        }
+        } catch (SQLException e) {;}
     }
 
-    // public MySqlEdit(){}
 
     public static List<Users> getAllUsers(String quare) {
 

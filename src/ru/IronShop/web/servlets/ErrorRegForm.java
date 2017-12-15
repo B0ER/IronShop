@@ -1,6 +1,7 @@
 package ru.IronShop.web.servlets;
 
 import ru.IronShop.web.MySql.MySqlEdit;
+import ru.IronShop.web.MySql.MySqlManager;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +17,7 @@ public class ErrorRegForm extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
 
         if(req.getParameter("send").equals("true")) {
-            if (ms.counter("SELECT * FROM users WHERE mail='" + req.getParameter("mail") + "';") > 0) {
+            if (MySqlManager.searchQuantityUsersToBD( req.getParameter("mail"))) {
                 req.setAttribute("alreadyMail", "true");
                 req.getRequestDispatcher("RegForm").forward(req, resp);
             } else {
@@ -24,14 +25,12 @@ public class ErrorRegForm extends HttpServlet {
             }
         }else
 
-        if(ms.counter("SELECT * FROM users WHERE mail='"+req.getParameter("mail")+"' AND password = '"+req.getParameter("password")+"';")>0)
+        if(MySqlManager.userAuthorization(req.getParameter("mail"),req.getParameter("password")))
         {
             req.getRequestDispatcher("Sign").forward(req, resp);
-        }else{
+        } else {
             req.setAttribute("alreadyMailandPassword","true");
             req.getRequestDispatcher("RegForm").forward(req, resp);
         }
-
-
     }
 }
